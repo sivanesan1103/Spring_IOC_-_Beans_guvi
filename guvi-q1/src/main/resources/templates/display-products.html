@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Display Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            border: 2px solid black;
+        }
+        th, td {
+            border: 2px solid black;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h2>Product Catalog</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>price</th>
+                <th>Category</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="prod : ${products}">
+                <td th:text="${prod.name}">Name</td>
+                <td th:text="${prod.price}">0.0</td>
+                <td th:text="${prod.category}">Category</td>
+            </tr>
+        </tbody>
+    </table>
+    <br/>
+    <a href="/">Back to Home</a>
+</body>
+</html>
